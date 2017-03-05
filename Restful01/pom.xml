@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Restful01</groupId>
+  <artifactId>Restful01</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Restful01 Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+    <properties>  
+            <cxf.version>3.0.7</cxf.version>  
+            <junit.version>4.11</junit.version>
+            <gson.version>2.3.1</gson.version>  
+     </properties>  
+  
+  <dependencies>
+ 		<!-- junit需要导入的jar包 --> 
+		   <dependency>
+		     <groupId>junit</groupId>
+		     <artifactId>junit</artifactId>
+		     <version>${junit.version}</version>
+		     <scope>test</scope>
+		   </dependency>
+     	 <!-- CXF需要导入的jar包 --> 
+     	<dependency>  
+            <groupId>org.apache.cxf</groupId>  
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>  
+            <version>${cxf.version}</version>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>org.apache.cxf</groupId>  
+            <artifactId>cxf-rt-transports-http</artifactId>  
+            <version>${cxf.version}</version>  
+        </dependency>  
+        <!-- CXF实现RestFul接口需要用到的包 -->  
+        <dependency>  
+            <groupId>org.apache.cxf</groupId>  
+            <artifactId>cxf-rt-frontend-jaxrs</artifactId>  
+            <version>${cxf.version}</version>  
+        </dependency>  
+        <!-- 客户端调用restFul服务需要导入的包 -->  
+        <dependency>  
+            <groupId>org.apache.cxf</groupId>  
+            <artifactId>cxf-rt-rs-client</artifactId>  
+            <version>${cxf.version}</version>  
+        </dependency>  
+  
+        <!-- 部署至tomcat低下不会，jetty环境需要加入该包 -->  
+        <dependency>  
+            <groupId>org.apache.cxf</groupId>  
+            <artifactId>cxf-rt-transports-http-jetty</artifactId>  
+            <version>${cxf.version}</version>  
+        </dependency>
+        
+	     <dependency>  
+	    <groupId>com.google.code.gson</groupId>  
+	    <artifactId>gson</artifactId>  
+	    <version>${gson.version}</version>  
+		</dependency>
+    
+  </dependencies>
+  <build>
+    <finalName>Restful01</finalName>
+  </build>
+</project>
